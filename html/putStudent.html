@@ -10,22 +10,27 @@
 </head>
 <body>
     <div id="edit-student" class="container>
-        <form >
+        <form action="" >
             <h2 class="text-primary">Sửa học viên</h2>
             <label for="text">Nhập tên cần tìm</label>
             <input id="search" class="form-control" value="" type="text" placeholder="tên cần tìm kiếm">
+            <span id="message1"></span><br>
             <button id="searc" class="btn btn-secondary">Tìm kiếm</button><br>
-            <span id="messa"></span>
-            <label for="">Tên học viên</label>
-            <input value="" id="1" style="display: block;" class="form-control" type="text" placeholder="tên học viên">
+        </form> <br>
+         
+        <form action="">
+            <label class="text-primary" for="">Tên học viên</label>
+            <input value="" class="form-control" type="text" name="name" placeholder="tên học viên">
             <label for="">Tuổi học viên</label>
-            <input value="" id="2" style="display: block;" class="form-control" type="number" placeholder="tuổi">
+            <input value="" class="form-control" type="number" placeholder="tuổi">
             <label for="">Địa chỉ học viên</label>
-            <input value="" id="3" style="display: block;" class="form-control" type="text" placeholder="địa chỉ">
-            <span id="message"></span>
+            <input value="" class="form-control" name="address" type="text" placeholder="địa chỉ">
+            <span id="message2"></span>
         </form>
         <button class="btn btn-secondary"><a href="index.html">Hủy</a></button>
-        <button class="btn btn-secondary">Cập nhật</button>
+        <button class="btn btn-secondary" id="btn">Cập nhật</button>
     </div>
+
+    <script src="/js/put.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@ function getStudent() {
     promise
         .then(async function (response) {
             let listStudents = await response.json()
+            console.log(listStudents)
             showList(listStudents)
         })
         .catch(function (erroe) {
@@ -17,16 +18,29 @@ function getStudent() {
 }
 getStudent()
 
-function showList(listArry) {
+function showList(listStudents) {
     let str = '';
-    for (let i = 0; i < listArry.length; i++) {
-        let student = listArry[i];
+    for (let i = 0; i < listStudents.length; i++) {
+        let student = listStudents[i];
         str += `<tr>
         <td>${student.name}</td>
         <td>${student.age}</td>
         <td>${student.address}</td>
         <td>${student.point}</td>
+        <td><button class="btn btn-secondary" onclick="deleteStd(${student.id})">Xóa</button></td>
     </tr>`
     document.getElementById('list').innerHTML = str
     }
+}
+
+function deleteStd(id){
+    let promise = fetch(url + '/' + id, {
+        method: "DELETE",
+        headers: {"content-type":"application/json"}
+    })
+    promise
+        .then(response => response.json())
+        .then(function(){
+            getStudent();
+        })
 }
